@@ -1,5 +1,5 @@
 {% set name = "django-pwa" %}
-{% set version = "1.0.10" %}
+{% set version = "2.0.0" %}
 
 
 package:
@@ -7,8 +7,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/django-pwa-{{ version }}.tar.gz
-  sha256: 07ed9dd57108838e3fe44b551a82032ca4ed76e31cb3c3e8d51604e0fe7e81e9
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 489532e2b742c69b19de529c7c422d7a98911645932ea05ea7e4fd43b4757b0d
 
 build:
   number: 0
