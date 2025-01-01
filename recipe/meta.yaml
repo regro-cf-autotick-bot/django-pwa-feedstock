@@ -7,11 +7,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/django-pwa-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/django-pwa-{{ version }}.tar.gz
   sha256: 07ed9dd57108838e3fe44b551a82032ca4ed76e31cb3c3e8d51604e0fe7e81e9
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -19,10 +19,10 @@ requirements:
   host:
     - pip
     - pypandoc
-    - python >=3.5
+    - python {{ python_min }}
   run:
     - django >=1.8
-    - python >=3.5
+    - python >={{ python_min }}
 
 test:
   imports:
@@ -31,6 +31,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: http://github.com/silviolleite/django-pwa
